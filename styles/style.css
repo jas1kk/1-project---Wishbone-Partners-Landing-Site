@@ -1,0 +1,689 @@
+/* --- Общие Стили и Сброс --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-primary-text: #1B1A1A;
+    --color-secondary-text: #645C55;
+    --color-dark-text: #403E3B;
+    --color-white: #FFFFFF;
+    --color-background-light: #F7F7F7; /* ws9 */
+    --color-background-accent: #CEC4BC; /* ws11 */
+    --color-background-gray: #e7e7e9; /* ws4 */
+    --color-background-dark: #403E3B; /* ws7 */
+    --color-background-soft-gray: #dbdfde; /* ws6 */
+    --color-background-brown-gray: #c8c1bb; /* ws8 */
+    --font-header: 'Montserrat', sans-serif;
+    --font-body: 'Poppins', sans-serif;
+    --font-subtitle: 'Work Sans', sans-serif;
+    --max-width: 1200px;
+}
+
+body {
+    background-color: rgb(197, 197, 197);
+    max-width: 1920px;
+    margin: 0 auto; 
+    font-family: var(--font-body);
+    color: var(--color-primary-text);
+    line-height: 1.6;
+}
+
+/* --- Вспомогательные классы --- */
+.container {
+    max-width: var(--max-width);
+    width: 90%;
+    margin: 0 auto;
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+.bg-white { background-color: var(--color-white); }
+.bg-lightest-gray { background-color: var(--color-background-light); }
+.bg-light-gray { background-color: var(--color-background-gray); }
+.bg-soft-gray { background-color: var(--color-background-soft-gray); }
+.bg-brown-gray { background-color: var(--color-background-brown-gray); }
+.bg-dark { background-color: var(--color-background-dark); }
+.bg-accent { background-color: var(--color-background-accent); }
+
+/* --- 0. Header (Dekstop) --- */
+.desktop-header {
+    background-color: var(--color-white);
+    text-align: right;
+    padding-right: 20px;
+}
+.desktop-header p {
+    font-size: 12px;
+    color: grey;
+    padding: 5px 0;
+    background-color: transparent;
+}
+
+/* --- 1. Навигация (Navbar) --- */
+.navbar {
+    background-color: var(--color-white);
+    padding: 20px 0;
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 500;
+    font-family: var(--font-header);
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-primary-text);
+    font-size: 18px;
+    transition: opacity 0.3s;
+}
+
+.btn-template {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    font-family: var(--font-body);
+    margin-left: 40px;
+}
+
+/* --- 2. Секция Героя (Hero) - ws2 --- */
+.hero-section {
+    background-color: var(--color-white);
+}
+
+.hero-content {
+    display: flex;
+    flex-wrap: wrap; 
+    min-height: 700px;
+}
+
+.hero-text-content {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 50px;
+    min-width: 350px;
+}
+
+.hero-image-content {
+    flex: 1 1 50%;
+    overflow: hidden;
+}
+
+.hero-image-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: grey;
+    font-family: var(--font-subtitle);
+    margin-bottom: 10px;
+}
+.subtitle-light {
+    font-size: 22px;
+    color: #ECE7E4;
+    font-family: var(--font-body);
+    margin-bottom: 10px;
+}
+
+.hero-title {
+    font-size: 60px;
+    font-family: var(--font-header);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-description p {
+    font-size: 18px;
+    font-family: var(--font-body);
+    margin-bottom: 5px;
+    max-width: 80%;
+}
+
+.read-more {
+    font-size: 20px;
+    font-family: var(--font-header);
+    text-decoration: none;
+    color: var(--color-primary-text);
+    border-bottom: 2px solid var(--color-primary-text);
+    padding-bottom: 3px;
+    display: inline-block;
+    margin-top: 30px;
+}
+
+/* --- 3. Секция "Our Firm" (ws3) --- */
+.firm-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 100px; 
+}
+
+.firm-title h2 {
+    font-size: 35px;
+    font-family: var(--font-header);
+    text-align: right;
+}
+
+.firm-text p {
+    font-size: 18px;
+    font-family: var(--font-body);
+    margin-bottom: 20px;
+}
+
+.partner-box {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.partner-image {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 20px;
+    background-color: transparent;
+}
+
+.partner-details strong {
+    display: block;
+    font-size: 20px;
+    font-family: var(--font-body);
+}
+
+.partner-details span {
+    color: grey;
+    font-size: 18px;
+    font-family: var(--font-body);
+}
+
+
+.project-spotlight {
+    position: relative;
+    padding: 0;
+    min-height: 600px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spotlight-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.project-overlay {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    text-align: center;
+}
+
+.project-card .project-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color-dark-text);
+    width: 80%;
+    max-width: 400px;
+}
+
+.overlay-title {
+    font-size: 20px;
+    font-family: var(--font-body);
+    color: var(--color-dark-text);
+    margin-bottom: 10px;
+}
+.overlay-subtitle {
+    font-size: 20px;
+    font-family: var(--font-body);
+    color: var(--color-secondary-text);
+}
+
+.large-spotlight .project-overlay {
+    color: var(--color-dark-text);
+}
+
+.large-spotlight.bg-dark .project-overlay {
+    color: var(--color-white);
+}
+
+/* Перемещение текста влево для ws8 */
+.overlay-left {
+    position: absolute;
+    left: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: left;
+}
+
+
+/* --- 5. Our Process (ws5) --- */
+.process-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.process-header h2 {
+    font-size: 50px;
+    font-family: var(--font-body);
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    text-align: center;
+}
+
+.process-item img {
+    margin-bottom: 20px;
+}
+
+.process-item h3 {
+    font-size: 24px;
+    font-family: var(--font-body);
+    color: var(--color-dark-text);
+    margin-bottom: 15px;
+}
+
+.process-item p {
+    font-size: 15px;
+    color: var(--color-secondary-text);
+}
+
+/* --- 7. Prior Clients (ws7) --- */
+.clients-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.clients-text {
+    max-width: 40%;
+}
+
+.title-light {
+    font-size: 40px;
+    color: var(--color-white);
+    font-family: var(--font-body);
+    margin-bottom: 20px;
+}
+
+.description-light {
+    font-size: 18px;
+    color: #ECE7E4;
+    font-family: var(--font-body);
+}
+
+/* Отдельный CSS-код для .client-logos */
+.client-logos {
+    display: grid;
+    /* Создаем 2 колонки, которые будут иметь одинаковый размер (1fr) */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 50px; /* Отступ между элементами сетки */
+    max-width: 550px; /* Ограничиваем общую ширину для блока с логотипами */
+    width: 100%;
+    margin-left: auto; /* Для выравнивания всего блока вправо в родительском контейнере */
+}
+
+.client-logos img {
+    /* Изображение будет автоматически растянуто на всю ширину колонки (1fr) */
+    width: 100%; 
+    height: auto;
+    background-color: transparent;
+}
+
+/* Добавляем адаптивность для мобильных (на маленьких экранах логотипы идут в 1 ряд) */
+@media (max-width: 480px) {
+    .client-logos {
+        grid-template-columns: 1fr; /* На маленьких экранах - 1 логотип в ряд */
+        max-width: 100%;
+        margin: 0 auto;
+    }
+}
+
+
+/* --- 9. Featured Projects (ws9) --- */
+.projects-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.projects-header h2 {
+    font-size: 45px;
+    font-family: var(--font-body);
+    margin-bottom: 10px;
+}
+
+.projects-header p {
+    font-size: 24px;
+    color: var(--color-secondary-text);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.project-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.project-item .location {
+    font-size: 20px;
+    color: var(--color-secondary-text);
+}
+
+.project-item .project-name {
+    font-size: 30px;
+    color: var(--color-dark-text);
+    margin-top: 5px;
+}
+
+.projects-footer {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.view-all {
+    font-size: 23px;
+    color: var(--color-primary-text);
+    text-decoration: none;
+    border-bottom: 2px solid var(--color-primary-text);
+    padding-bottom: 3px;
+    display: inline-block;
+}
+
+
+/* --- 10. Meet Our Team (ws10) --- */
+.team-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+.team-header h2 {
+    font-size: 38px;
+    font-family: var(--font-body);
+    margin-bottom: 15px;
+}
+.team-header p {
+    font-size: 20px;
+    color: var(--color-secondary-text);
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+.view-team {
+    font-size: 23px;
+    color: var(--color-primary-text);
+    text-decoration: none;
+    border-bottom: 2px solid var(--color-primary-text);
+    padding-bottom: 3px;
+    display: inline-block;
+}
+
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.team-member {
+    text-align: center;
+    flex: 0 0 100px; /* Фиксированный размер для иконок */
+}
+
+.team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.team-member strong {
+    display: block;
+    font-size: 22px;
+    color: var(--color-primary-text);
+}
+.team-member span {
+    font-size: 18px;
+    color: var(--color-secondary-text);
+}
+
+/* --- 11. CTA (ws11) --- */
+.cta-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cta-text {
+    max-width: 60%;
+}
+
+.cta-text h2 {
+    font-size: 50px;
+    font-family: var(--font-body);
+    line-height: 1.1;
+}
+
+.cta-link {
+    font-size: 20px;
+    color: var(--color-primary-text);
+    text-decoration: none;
+    border-bottom: 2px solid var(--color-primary-text);
+    padding-bottom: 3px;
+    display: inline-block;
+}
+
+/* --- 12. Footer (ws12) --- */
+.footer {
+    padding: 50px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo {
+    font-size: 40px;
+    font-family: var(--font-body);
+    margin-bottom: 10px;
+}
+
+.copyright, .powered-by {
+    font-size: 20px;
+    color: var(--color-secondary-text);
+}
+
+.copyright {
+    /* Скрываем вторую строку "Powered by Webflow" */
+    display: none;
+}
+.powered-by {
+    display: block;
+    margin-top: 5px;
+}
+
+.social-links img {
+    width: 35px;
+    height: 35px;
+    margin-left: 20px;
+    background-color: transparent;
+}
+
+
+/* ================================================= */
+/* --- МЕДИА-ЗАПРОСЫ (АДАПТИВНЫЙ ДИЗАЙН) --- */
+/* ================================================= */
+
+@media (max-width: 1024px) {
+    .firm-content-grid {
+        gap: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Общие отступы */
+    .section-padding {
+        padding: 60px 0;
+    }
+
+    /* Навигация: Сворачиваем в колонку */
+    .navbar-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-menu {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px 20px;
+    }
+    .btn-template {
+        margin-left: 0;
+    }
+
+    /* Секция Героя: Изображение сверху, текст снизу */
+    .hero-content {
+        flex-direction: column;
+        min-height: auto;
+    }
+    .hero-text-content {
+        order: 2;
+        padding: 50px 20px;
+        text-align: center;
+    }
+    .hero-text-content .hero-description p {
+        max-width: 100%;
+        margin: 0 auto 5px;
+    }
+    .hero-image-content {
+        order: 1;
+        height: 400px;
+    }
+    .hero-title {
+        font-size: 45px;
+    }
+
+    /* Our Firm: Сетка в одну колонку */
+    .firm-content-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .firm-title h2 {
+        text-align: left;
+    }
+
+    /* Process: Сетка в одну колонку */
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Clients: Сворачиваем в колонку */
+    .clients-content {
+        flex-direction: column;
+    }
+    .clients-text {
+        max-width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    .client-logos {
+        max-width: 100%;
+        justify-content: space-around;
+    }
+    .client-logos img {
+        width: 45%; /* Два логотипа в ряд */
+    }
+
+    /* Project Spotlight (ws8): Текст по центру */
+    .overlay-left {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    /* Featured Projects: Сетка в одну колонку */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* CTA: Сворачиваем в колонку */
+    .cta-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    .cta-text {
+        max-width: 100%;
+    }
+    .cta-text h2 {
+        font-size: 40px;
+    }
+
+    /* Footer: Сворачиваем в колонку */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    .social-links img {
+        margin: 0 10px;
+    }
+    .copyright {
+        display: block; /* Показываем полную строку авторских прав */
+    }
+    .powered-by {
+        display: none; /* Скрываем дублирующую строку */
+    }
+}
